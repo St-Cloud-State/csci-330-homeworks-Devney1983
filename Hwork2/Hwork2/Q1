@@ -1,0 +1,114 @@
+Script started on 2025-02-06 01:03:47+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="61" LINES="11"]
+[0;32m@Devney1983 [0m➜ [1;34m/workspaces/csci-330-homeworks-Devney1983/Hwork2/Hwork2 [0;36m([1;31mmain[0;36m) [0m$ rlwrap sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+[K* [K* [K* (NOT (EQUAL 3 (ABS -3)[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(NOT (EQUAL 3 (ABS -3)))
+
+NIL
+* [K* [K* (/ (+ 8 12)[C[C[C[C[C[C[C[C[C[C[C[C[C 2)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(/ (+ 8 12) 2)
+
+10
+* [K* [K* (+ (* 3 3)[C[C[C[C[C[C[C[C[C[C[C[C (* 4 4)[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(+ (* 3 3) (* 4 4))
+
+25
+* [K* [K* (load "mystery.lisp")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(load "mystery.lisp")
+
+T
+* [K* [K* (load "mpg.lisp")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(load "mpg.lisp")
+
+T
+* [K* [K* (miles-per-gallon 1000 1200 20)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(miles-per-gallon 1000 1200 20)
+
+10
+* [K* [K* (mystery '(dancing bear)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[K(mystery '(dancing bear))
+
+(BEAR DANCING)
+* [K* [K* (mystery ;[K'([Kdancing 'bear)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(mystery 'dancing 'bear)
+
+debugger invoked on a SB-INT:SIMPLE-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  invalid number of arguments: 2
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(MYSTERY DANCING BEAR) [external]
+   source: (DEFUN MYSTERY (X) (LIST (SECOND X) (FIRST X)))
+0] [K0] [K0] TOPLEVEL, TOP[C[C[C[KTOPLEVEL, TOP
+
+* [K* [K* (myse[Ktery '(zowie)[C[C[C[C[C[C[C)[C[C[K(mystery '(zowie))
+
+(NIL ZOWIE)
+* [K* [K* (mystery (list 'first 'second)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(mystery (list 'first 'second))
+
+(SECOND FIRST)
+* [K* [K* (list 'cons t nil)[C[C[K(list 'cons t nil)
+
+(CONS T NIL)
+* [K* [K* (eval (list 'cons t nil))[C[C[K(eval (list 'cons t nil))
+
+(T)
+* [K* [K* (eval (eval (list 'cons t N[Knil)))[C[C[K(eval (eval (list 'cons t nil)))
+; in: T
+;     (T)
+; 
+; caught WARNING:
+;   The function T is undefined, and its name is reserved by ANSI CL so that even
+;   if it were defined later, the code doing so would not be portable.
+; 
+; compilation unit finished
+;   Undefined function:
+;     T
+;   caught 1 WARNING condition
+
+debugger invoked on a UNDEFINED-FUNCTION in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The function COMMON-LISP:T is undefined.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+("undefined function")
+0] [K0] [K0] TOPLEVEL, TOP[C[C[C[KTOPLEVEL, TOP
+
+* [K* [K* (apply #'cons '(t niul[K[Kl)[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[K(apply #'cons '(t nil)))
+
+(T)
+* 
+debugger invoked on a SB-INT:SIMPLE-READER-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  unmatched close parenthesis
+
+    Stream: #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {91051F1}>
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-IMPL::READ-RIGHT-PAREN #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {91051F1}> #<unused argument>)
+0] [K0] [K0] TOPLEVEL, TOP[C[C[C[KTOPLEVEL, TOP
+
+* [K* [K* (eval nil)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(eval nil)
+
+NIL
+* [K* [K* (list 'eval nil)[C[C[K(list 'eval nil)
+
+(EVAL NIL)
+* [K* [K* (eval (list 'eval nil))[C[C[K(eval (list 'eval nil))
+
+NIL
+* [K* [K* (exit)[C[C[C[C[C[C[C[C[C[C[K(exit)
+[0;32m@Devney1983 [0m➜ [1;34m/workspaces/csci-330-homeworks-Devney1983/Hwork2/Hwork2 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-06 01:12:17+00:00 [COMMAND_EXIT_CODE="0"]
